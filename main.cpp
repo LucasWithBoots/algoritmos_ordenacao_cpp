@@ -49,6 +49,7 @@ void bubbleSort(int arr[], int n) {
     }
 }
 
+// https://www.geeksforgeeks.org/insertion-sort/
 void insertionSort(int arr[], int n) {
     int i, key, j;
     for (i = 1; i < n; i++) {
@@ -67,6 +68,7 @@ void insertionSort(int arr[], int n) {
     }
 }
 
+// https://www.geeksforgeeks.org/selection-sort/
 void selectionSort(int arr[], int n) {
     int i, j, min_idx;
     for (i = 0; i < n - 1; i++) {
