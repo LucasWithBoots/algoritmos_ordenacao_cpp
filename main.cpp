@@ -93,17 +93,18 @@ void printArray(int arr[], int size) {
 }
 
 int main() {
-    int vetorteste[10];
+    int tam = 10;
+    int vetorteste[tam];
 
-    gerarVetor(vetorteste, 10, "aleatorio");
+    gerarVetor(vetorteste, tam, "aleatorio");
 
-    printArray(vetorteste, 10);
+    printArray(vetorteste, tam);
 
     cout << "\n" << endl;
 
-    bubbleSort(vetorteste, 10);
+    insertionSort(vetorteste, tam);
 
-    printArray(vetorteste, 10);
+    printArray(vetorteste, tam);
 
     cout << "\nTotal de leituras: " << leituraCount << endl;
     cout << "Total de escritas: " << escritaCount << endl;
