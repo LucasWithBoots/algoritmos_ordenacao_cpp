@@ -100,15 +100,17 @@ int main() {
 
     gerarVetor(vetorteste, tam, "aleatorio");
 
+    cout << "Vetor original:" << endl;
     printArray(vetorteste, tam);
 
     cout << "\n" << endl;
 
     insertionSort(vetorteste, tam);
 
+    cout << "Vetor modificado em ordem:" << endl;
     printArray(vetorteste, tam);
 
-    cout << "\nTotal de leituras: " << leituraCount << endl;
+    cout << "\n\nTotal de leituras: " << leituraCount << endl;
     cout << "Total de escritas: " << escritaCount << endl;
 
     std::cout << "\nFim do codigo!" << std::endl;
