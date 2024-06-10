@@ -4,8 +4,8 @@
 
 using namespace std;
 
-int leituraCount = 0; // Contador de leituras
-int escritaCount = 0; // Contador de escritas
+long int leituraCount = 0; // Contador de leituras
+long int escritaCount = 0; // Contador de escritas
 
 void gerarVetor(int vetor[], int tamanho, string ordem) {
     if (ordem == "crescente") {
@@ -112,6 +112,8 @@ int main() {
 
     cout << "\n\nTotal de leituras: " << leituraCount << endl;
     cout << "Total de escritas: " << escritaCount << endl;
+
+    cout << "Soma: " << leituraCount + escritaCount << endl;
 
     std::cout << "\nFim do codigo!" << std::endl;
     return 0;
