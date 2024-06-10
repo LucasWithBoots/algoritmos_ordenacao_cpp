@@ -94,27 +94,47 @@ void printArray(int arr[], int size) {
         cout << " " << arr[i];
 }
 
+void resetCounters() {
+    leituraCount = 0;
+    escritaCount = 0;
+}
+
 int main() {
-    int tam = 10;
-    int vetorteste[tam];
+    int tamanhos[] = {100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000};
+    int numTamanhos = sizeof(tamanhos) / sizeof(tamanhos[0]);
 
-    gerarVetor(vetorteste, tam, "aleatorio");
+    cout << "TAMANHO_DO_VETOR BubbleSort InsertionSort SelectionSort" << endl;
 
-    cout << "Vetor original:" << endl;
-    printArray(vetorteste, tam);
+    for (int i = 0; i < numTamanhos; i++) {
+        int tam = tamanhos[i];
+        int *vetorteste = new int[tam];
 
-    cout << "\n" << endl;
+        gerarVetor(vetorteste, tam, "aleatorio");
 
-    insertionSort(vetorteste, tam);
+        // Ordenação com BubbleSort
+        resetCounters();
+        bubbleSort(vetorteste, tam);
+        long int bubbleSortLeiturasEscritas = leituraCount + escritaCount;
 
-    cout << "Vetor modificado em ordem:" << endl;
-    printArray(vetorteste, tam);
+        gerarVetor(vetorteste, tam, "aleatorio");
 
-    cout << "\n\nTotal de leituras: " << leituraCount << endl;
-    cout << "Total de escritas: " << escritaCount << endl;
+        // Ordenação com InsertionSort
+        resetCounters();
+        insertionSort(vetorteste, tam);
+        long int insertionSortLeiturasEscritas = leituraCount + escritaCount;
 
-    cout << "Soma: " << leituraCount + escritaCount << endl;
+        gerarVetor(vetorteste, tam, "aleatorio");
 
-    std::cout << "\nFim do codigo!" << std::endl;
+        // Ordenação com SelectionSort
+        resetCounters();
+        selectionSort(vetorteste, tam);
+        long int selectionSortLeiturasEscritas = leituraCount + escritaCount;
+
+        cout << tam << " " << bubbleSortLeiturasEscritas << " " << insertionSortLeiturasEscritas << " " << selectionSortLeiturasEscritas << endl;
+
+        delete[] vetorteste;
+    }
+
+    std::cout << "Fim do codigo!" << std::endl;
     return 0;
 }
