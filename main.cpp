@@ -4,8 +4,8 @@
 
 using namespace std;
 
-long int leituraCount = 0; // Contador de leituras
-long int escritaCount = 0; // Contador de escritas
+unsigned long int leituraCount = 0; // Contador de leituras
+unsigned long int escritaCount = 0; // Contador de escritas
 
 void gerarVetor(int vetor[], int tamanho, string ordem) {
     if (ordem == "crescente") {
